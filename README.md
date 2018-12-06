@@ -24,7 +24,8 @@ df  %>% PctCalcOne( 'Q1', 'weight_r') %>%
            subtitle= paste("n: ", NROW(df %>% filter(!is.na(Q1)))),
            x = "", y ="Percent") 
 ```
-<img src="example_charts\1_basic_bar.png">
+
+<img src="\example_charts\1_basic_bar.png">
 
 
 ### Basic Bar Plot Horizontal
@@ -37,6 +38,7 @@ df %>% PctCalcOne('Q_Age_f', 'weight_r') %>%
             x = "", y ="Percent") + 
             scale_x_discrete(labels =  c("18 - 34", "35 -54", "65 +")) 
 ````
+
 <img src="example_charts\2_basic_bar_flipped.png">
 
 
@@ -49,6 +51,7 @@ df %>% PctCalcOne('Eth', 'weight_r') %>%
                     subtitle= paste("n: ", NROW(df %>% filter(!is.na(Eth)))),
                     x = "", y ="Percent")
 ```
+
 <img src="example_charts\3_basic_bar_ order_flipped.png">
 
 
@@ -62,6 +65,7 @@ df %>% PctCalcTwo('Q_LaCountyReside', 'Q4', 'weight_r') %>%
                       x = "", y ="Percent") + scale_fill_discrete(labels = label_la )  +                        
                       scale_x_discrete(labels = label_oppose_support )
 ```
+
 <img src="example_charts\4_faceted_bar_vertical.png">
 
 
@@ -89,4 +93,5 @@ df %>% filter( ) %>% PctCalcTwo('Q_LaCountyReside', 'Q_Num_Host', 'weight_r') %>
     x = "", y ="Percent") + 
     scale_fill_discrete( labels = pos_la)
 ```
-<img src="example_charts\6_faceted_bar_ordered_vertical.png">
+
+<img src="\example_charts\6_faceted_bar_ordered_vertical.png">
