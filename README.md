@@ -24,6 +24,8 @@ df  %>% PctCalcOne( 'Q1', 'weight_r') %>%
            subtitle= paste("n: ", NROW(df %>% filter(!is.na(Q1)))),
            x = "", y ="Percent") 
 ```
+<img src="\example_charts\1_basic_bar.emf">
+
 
 ### Basic Bar Plot Horizontal
 
@@ -35,6 +37,8 @@ df %>% PctCalcOne('Q_Age_f', 'weight_r') %>%
             x = "", y ="Percent") + 
             scale_x_discrete(labels =  c("18 - 34", "35 -54", "65 +")) 
 ````
+<img src="\example_charts\2_basic_bar_flipped.emf">
+
 
 ### Bar Plot With Order Horizontal
 
@@ -45,6 +49,7 @@ df %>% PctCalcOne('Eth', 'weight_r') %>%
                     subtitle= paste("n: ", NROW(df %>% filter(!is.na(Eth)))),
                     x = "", y ="Percent")
 ```
+<img src="\example_charts\3_basic_bar_ order_flipped.emf">
 
 
 ### Cross-Tabbed Summary / Faceted Bar Plot
@@ -54,8 +59,11 @@ df %>% PctCalcTwo('Q_LaCountyReside', 'Q4', 'weight_r') %>%
   plot_bar_fill_dodge(xvar = as.factor( Q4 ) , yvar = pct, fillvar = as.factor(Q_LaCountyReside),  
                       title="How supportive or opposed are you of Los Angeles hosting the Summer Olympic Games in 2028?",
                       subtitle= paste("n: ", NROW(df %>% filter(!is.na(Q4) ))),
-                      x = "", y ="Percent") + scale_fill_discrete(labels = label_la )  +                        scale_x_discrete(labels = label_oppose_support )
+                      x = "", y ="Percent") + scale_fill_discrete(labels = label_la )  +                        
+                      scale_x_discrete(labels = label_oppose_support )
 ```
+<img src="\example_charts\4_faceted_bar_vertical.emf">
+
 
 ### Cross-Tabbed Summary / Faceted Bar Plot Flipped
 
@@ -69,6 +77,8 @@ df %>% PctCalcTwo('Q_LaCountyReside', 'Q_Budget', 'weight_r') %>%
     scale_fill_discrete(labels = pos_la ) 
 ```
 
+<img src="\example_charts\5_faceted_bar_horizontal.emf">
+
 ### Cross-Tabbed Summary / Faceted Bar Plot Re-Ordered
 
 ```r
@@ -78,5 +88,5 @@ df %>% filter( ) %>% PctCalcTwo('Q_LaCountyReside', 'Q_Num_Host', 'weight_r') %>
     subtitle= paste("n: ", NROW(df %>% filter(!is.na(Q_CityWithdraw)))),
     x = "", y ="Percent") + 
     scale_fill_discrete( labels = pos_la)
-
 ```
+<img src="\example_charts\6_faceted_bar_ordered_vertical.emf">
